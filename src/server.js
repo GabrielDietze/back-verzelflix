@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use( usersRouter);
-app.use( favoriteRouter, authMiddleware);
-app.use( movieRouter, authMiddleware);  
+app.use( favoriteRouter);
+app.use( movieRouter);  
 
 
 
