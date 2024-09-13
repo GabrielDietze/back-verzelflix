@@ -5,6 +5,7 @@ const usersRouter = require('./routes/users');
 const connectDB = require('./config/db');
 const movieRouter = require('./routes/movies');
 const favoriteRouter = require('./routes/favorites');
+const authMiddleware = require('./middleware/authMiddleware');
 require('dotenv').config()
 
 
@@ -16,8 +17,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use( usersRouter);
-app.use( favoriteRouter);
-app.use( movieRouter);  
+app.use( favoriteRouter, authMiddleware);
+app.use( movieRouter, authMiddleware);  
 
 
 
