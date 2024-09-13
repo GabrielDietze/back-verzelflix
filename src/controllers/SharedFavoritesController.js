@@ -25,7 +25,7 @@ exports.createShareLink = async (req, res) => {
     await user.save();
 
     // Cria o link de compartilhamento
-    const shareLink = `http://localhost:3000/favorites/shared/${token}`;
+    const shareLink = `https://verzelflix-crjrnv0g7-dietzes-projects.vercel.app/favorites/shared/${token}`;
 
     res.status(200).json({ message: 'Link de compartilhamento gerado', shareLink });
   } catch (err) {
